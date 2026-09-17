@@ -24,6 +24,9 @@ def check_win():
     elif (tic_tac_toe_bord[0][0] == "O" and tic_tac_toe_bord[0][1] == "O" and tic_tac_toe_bord[0][2] == "O") or (tic_tac_toe_bord[1][0] == "O" and tic_tac_toe_bord[1][1] == "O" and tic_tac_toe_bord[1][2] == "O") or (tic_tac_toe_bord[2][0] == "O" and tic_tac_toe_bord[2][1] == "O" and tic_tac_toe_bord[2][2] == "O") or (tic_tac_toe_bord[0][0] == "O" and tic_tac_toe_bord[1][0] == "O" and tic_tac_toe_bord[2][0] == "O") or (tic_tac_toe_bord[0][1] == "O" and tic_tac_toe_bord[1][1] == "O" and tic_tac_toe_bord[2][1] == "O") or (tic_tac_toe_bord[0][2] == "O" and tic_tac_toe_bord[1][2] == "O" and tic_tac_toe_bord[2][2] == "O") or (tic_tac_toe_bord[0][0] == "O" and tic_tac_toe_bord[1][1] == "O" and tic_tac_toe_bord[2][2] == "O") or (tic_tac_toe_bord[0][2] == "O" and tic_tac_toe_bord[1][1] == "O" and tic_tac_toe_bord[2][0] == "O"):
         print("player 2 win")
         game = "no"
+    elif tic_tac_toe_bord[0][0] != 0 and tic_tac_toe_bord[0][1] != 0 and tic_tac_toe_bord[0][2] != 0 and tic_tac_toe_bord[1][0] != 0 and tic_tac_toe_bord[1][1] != 0 and tic_tac_toe_bord[1][2] != 0 and tic_tac_toe_bord[2][0] != 0 and tic_tac_toe_bord[2][1] != 0 and tic_tac_toe_bord[2][2] != 0:
+        print("it's full so it's a tie")
+        game = "no"
 print_board()
 while game == "go":
     x_go = "yes"
@@ -40,13 +43,14 @@ while game == "go":
             print_board()
             check_win()
     while O_go == "yes":
-        x_where_O = int(input("player 2 where do you want to go?(row)"))
-        y_where_O = int(input("player 2 where do you want to go?(column)"))
-        if tic_tac_toe_bord[x_where_O][y_where_O] == "x" or tic_tac_toe_bord[x_where_O][y_where_O] == "O":
-            print("invalid input")
-            print_board()
-        else:
-            tic_tac_toe_bord[x_where_O][y_where_O] = "O"
-            O_go = "no"
-            print_board()
-            check_win()
+        if game=="go":
+            x_where_O = int(input("player 2 where do you want to go?(row)"))
+            y_where_O = int(input("player 2 where do you want to go?(column)"))
+            if tic_tac_toe_bord[x_where_O][y_where_O] == "x" or tic_tac_toe_bord[x_where_O][y_where_O] == "O":
+                print("invalid input")
+                print_board()
+            else:
+                tic_tac_toe_bord[x_where_O][y_where_O] = "O"
+                O_go = "no"
+                print_board()
+                check_win()
