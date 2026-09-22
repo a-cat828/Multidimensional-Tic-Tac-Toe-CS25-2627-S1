@@ -37,6 +37,9 @@ while game == "go":
         if tic_tac_toe_bord[x_where_x][y_where_x] == "x" or tic_tac_toe_bord[x_where_x][y_where_x] == "O":
             print("invalid input")
             print_board()
+        elif x_where_x >= 3 or x_where_x < 0 or y_where_x >= 3 or y_where_x < 0:
+            print("invalid input")
+            print_board()
         else:
             tic_tac_toe_bord[x_where_x][y_where_x] = "x"
             x_go = "no"
@@ -47,6 +50,9 @@ while game == "go":
             x_where_O = int(input("player 2 where do you want to go?(row)"))
             y_where_O = int(input("player 2 where do you want to go?(column)"))
             if tic_tac_toe_bord[x_where_O][y_where_O] == "x" or tic_tac_toe_bord[x_where_O][y_where_O] == "O":
+                print("invalid input")
+                print_board()
+            elif x_where_O >= 3 or x_where_O < 0 or y_where_O >= 3 or y_where_O < 0:
                 print("invalid input")
                 print_board()
             else:

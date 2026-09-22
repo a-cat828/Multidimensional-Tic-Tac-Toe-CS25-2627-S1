@@ -72,5 +72,67 @@ def print_board():
     print(f"|| {tic_tac_toe_bord_big[6][1][0]} | {tic_tac_toe_bord_big[6][1][1]} | {tic_tac_toe_bord_big[6][1][2]} ||| {tic_tac_toe_bord_big[7][1][0]} | {tic_tac_toe_bord_big[7][1][1]} | {tic_tac_toe_bord_big[7][1][1]} ||| {tic_tac_toe_bord_big[8][1][1]} | {tic_tac_toe_bord_big[7][1][1]} | {tic_tac_toe_bord_big[8][1][1]} ||")
     print("|+---+---+---+|+---+---+---+|+---+---+---+|")
     print(f"|| {tic_tac_toe_bord_big[6][2][0]} | {tic_tac_toe_bord_big[6][2][1]} | {tic_tac_toe_bord_big[6][2][2]} ||| {tic_tac_toe_bord_big[7][2][0]} | {tic_tac_toe_bord_big[7][2][1]} | {tic_tac_toe_bord_big[7][2][1]} ||| {tic_tac_toe_bord_big[8][2][1]} | {tic_tac_toe_bord_big[7][2][1]} | {tic_tac_toe_bord_big[8][2][1]} ||")
+def check_win_x():
+    global game
+    if (tic_tac_toe_bord_big[bord_x][0][0] == "x" and tic_tac_toe_bord_big[bord_x][0][1] == "x" and tic_tac_toe_bord_big[bord_x][0][2] == "x") or (
+            tic_tac_toe_bord_big[bord_x][1][0] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][1][2] == "x") or (
+            tic_tac_toe_bord_big[bord_x][2][0] == "x" and tic_tac_toe_bord_big[bord_x][2][1] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_x][0][0] == "x" and tic_tac_toe_bord_big[bord_x][1][0] == "x" and tic_tac_toe_bord_big[bord_x][2][0] == "x") or (
+           tic_tac_toe_bord_big[bord_x][0][1] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][2][1] == "x") or (
+            tic_tac_toe_bord_big[bord_x][0][2] == "x" and tic_tac_toe_bord_big[bord_x][1][2] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_x][0][0] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_x][0][2] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][2][0] == "x"):
+        print("player 1 win")
+        game = "no"
+    elif (tic_tac_toe_bord_big[bord_x][0][0] == "O" and tic_tac_toe_bord_big[bord_x][0][1] == "O" and tic_tac_toe_bord_big[bord_x][0][2] == "O") or (
+            tic_tac_toe_bord_big[bord_x][1][0] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][1][2] == "O") or (
+            tic_tac_toe_bord_big[bord_x][2][0] == "O" and tic_tac_toe_bord_big[bord_x][2][1] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
+            tic_tac_toe_bord_big[bord_x][0][0] == "O" and tic_tac_toe_bord_big[bord_x][1][0] == "O" and tic_tac_toe_bord_big[bord_x][2][0] == "O") or (
+            tic_tac_toe_bord_big[bord_x][0][1] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][2][1] == "O") or (
+            tic_tac_toe_bord_big[bord_x][0][2] == "O" and tic_tac_toe_bord_big[bord_x][1][2] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
+           tic_tac_toe_bord_big[bord_x][0][0] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
+            tic_tac_toe_bord_big[bord_x][0][2] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][2][0] == "O"):
+        print("player 2 win")
+        game = "no"
+
+    elif tic_tac_toe_bord_big[bord_x][0][0] != 0 and tic_tac_toe_bord_big[bord_x][0][1] != 0 and tic_tac_toe_bord_big[bord_x][0][2] != 0 and  tic_tac_toe_bord_big[bord_x][1][0] != 0 and tic_tac_toe_bord_big[bord_x][1][1] != 0 and tic_tac_toe_bord_big[bord_x][1][2] != 0 and tic_tac_toe_bord_big[bord_x][2][0] != 0 and tic_tac_toe_bord_big[bord_x][2][1] != 0 and tic_tac_toe_bord_big[bord_x][2][2] != 0:
+        print("it's full so it's a tie")
+        game = "no"
+game = "go"
+print_board()
+while game == "go":
+    x_go = "yes"
+    O_go = "yes"
+    while x_go == "yes":
+        bord_x = int(input("player 1 where do you want to go?(board)"))
+        x_where_x = int(input("player 1 where do you want to go?(row)"))
+        y_where_x = int(input("player 1 where do you want to go?(column)"))
+        if tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] == "x" or tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x]  == "O":
+            print("invalid input")
+            print_board()
+        elif x_where_x >= 3 or x_where_x < 0 or y_where_x >= 3 or y_where_x < 0 or bord_x < 0 or bord_x > 9:
+            print("invalid input")
+            print_board()
+        else:
+            tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] = "x"
+            x_go = "no"
+            print_board()
+            check_win_x()
+    while O_go == "yes":
+        if game=="go":
+            bord_O = int(input("player 2 where do you want to go?(board)"))
+            x_where_O = int(input("player 2 where do you want to go?(row)"))
+            y_where_O = int(input("player 2 where do you want to go?(column)"))
+            if tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "x" or tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "O":
+                print("invalid input")
+                print_board()
+            elif x_where_O >= 3 or x_where_O < 0 or y_where_O >= 3 or y_where_O < 0 or bord_O < 0 or bord_O > 9:
+                print("invalid input")
+                print_board()
+            else:
+                tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] = "O"
+                O_go = "no"
+                print_board()
+                check_win()
 
 
