@@ -1,3 +1,5 @@
+bord_forced_O = "no"
+bord_forced_x ="no"
 tic_tac_toe_bord_big =[
     [
     [0,0,0],
@@ -45,6 +47,11 @@ tic_tac_toe_bord_big =[
     [0,0,0]
 ],
     ]
+the_big_bord_win=[
+    [0,0,0],
+    [0,0,0],
+    [0,0,0],
+]
 def print_board():
     print("   0   1   2")
     print("+-----")
@@ -73,7 +80,8 @@ def print_board():
     print("|+---+---+---+|+---+---+---+|+---+---+---+|")
     print(f"|| {tic_tac_toe_bord_big[6][2][0]} | {tic_tac_toe_bord_big[6][2][1]} | {tic_tac_toe_bord_big[6][2][2]} ||| {tic_tac_toe_bord_big[7][2][0]} | {tic_tac_toe_bord_big[7][2][1]} | {tic_tac_toe_bord_big[7][2][1]} ||| {tic_tac_toe_bord_big[8][2][1]} | {tic_tac_toe_bord_big[7][2][1]} | {tic_tac_toe_bord_big[8][2][1]} ||")
 def check_win_x():
-    global game
+    global bord_forced_O
+    global bord_forced_x
     if (tic_tac_toe_bord_big[bord_x][0][0] == "x" and tic_tac_toe_bord_big[bord_x][0][1] == "x" and tic_tac_toe_bord_big[bord_x][0][2] == "x") or (
             tic_tac_toe_bord_big[bord_x][1][0] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][1][2] == "x") or (
             tic_tac_toe_bord_big[bord_x][2][0] == "x" and tic_tac_toe_bord_big[bord_x][2][1] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
@@ -82,8 +90,27 @@ def check_win_x():
             tic_tac_toe_bord_big[bord_x][0][2] == "x" and tic_tac_toe_bord_big[bord_x][1][2] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
             tic_tac_toe_bord_big[bord_x][0][0] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][2][2] == "x") or (
             tic_tac_toe_bord_big[bord_x][0][2] == "x" and tic_tac_toe_bord_big[bord_x][1][1] == "x" and tic_tac_toe_bord_big[bord_x][2][0] == "x"):
-        print("player 1 win")
-        game = "no"
+        print(f"player 1 win the {bord_x} square")
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_x == 0:
+            the_big_bord_win[0][0] = "x"
+        elif bord_x == 1:
+            the_big_bord_win[0][1] = "x"
+        elif bord_x == 2:
+            the_big_bord_win[0][2] = "x"
+        elif bord_x == 3:
+            the_big_bord_win[1][0] = "x"
+        elif bord_x == 4:
+            the_big_bord_win[1][1] = "x"
+        elif bord_x == 5:
+            the_big_bord_win[1][2] = "x"
+        elif bord_x == 6:
+            the_big_bord_win[2][0] = "x"
+        elif bord_x == 7:
+            the_big_bord_win[2][1] = "x"
+        elif bord_x == 8:
+            the_big_bord_win[2][2] = "x"
     elif (tic_tac_toe_bord_big[bord_x][0][0] == "O" and tic_tac_toe_bord_big[bord_x][0][1] == "O" and tic_tac_toe_bord_big[bord_x][0][2] == "O") or (
             tic_tac_toe_bord_big[bord_x][1][0] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][1][2] == "O") or (
             tic_tac_toe_bord_big[bord_x][2][0] == "O" and tic_tac_toe_bord_big[bord_x][2][1] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
@@ -92,19 +119,148 @@ def check_win_x():
             tic_tac_toe_bord_big[bord_x][0][2] == "O" and tic_tac_toe_bord_big[bord_x][1][2] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
            tic_tac_toe_bord_big[bord_x][0][0] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][2][2] == "O") or (
             tic_tac_toe_bord_big[bord_x][0][2] == "O" and tic_tac_toe_bord_big[bord_x][1][1] == "O" and tic_tac_toe_bord_big[bord_x][2][0] == "O"):
-        print("player 2 win")
-        game = "no"
+        print(f"player 2 win the {bord_x} square")
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_x == 0:
+            the_big_bord_win[0][0] = "O"
+        elif bord_x == 1:
+            the_big_bord_win[0][1] = "O"
+        elif bord_x == 2:
+            the_big_bord_win[0][2] = "O"
+        elif bord_x == 3:
+            the_big_bord_win[1][0] = "O"
+        elif bord_x == 4:
+            the_big_bord_win[1][1] = "O"
+        elif bord_x == 5:
+            the_big_bord_win[1][2] = "O"
+        elif bord_x == 6:
+            the_big_bord_win[2][0] = "O"
+        elif bord_x == 7:
+            the_big_bord_win[2][1] = "O"
+        elif bord_x == 8:
+            the_big_bord_win[2][2] = "O"
 
     elif tic_tac_toe_bord_big[bord_x][0][0] != 0 and tic_tac_toe_bord_big[bord_x][0][1] != 0 and tic_tac_toe_bord_big[bord_x][0][2] != 0 and  tic_tac_toe_bord_big[bord_x][1][0] != 0 and tic_tac_toe_bord_big[bord_x][1][1] != 0 and tic_tac_toe_bord_big[bord_x][1][2] != 0 and tic_tac_toe_bord_big[bord_x][2][0] != 0 and tic_tac_toe_bord_big[bord_x][2][1] != 0 and tic_tac_toe_bord_big[bord_x][2][2] != 0:
         print("it's full so it's a tie")
-        game = "no"
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_x == 0:
+            the_big_bord_win[0][0] = "T"
+        elif bord_x == 1:
+            the_big_bord_win[0][1] = "T"
+        elif bord_x == 2:
+            the_big_bord_win[0][2] = "T"
+        elif bord_x == 3:
+            the_big_bord_win[1][0] = "T"
+        elif bord_x == 4:
+            the_big_bord_win[1][1] = "T"
+        elif bord_x == 5:
+            the_big_bord_win[1][2] = "T"
+        elif bord_x == 6:
+            the_big_bord_win[2][0] = "T"
+        elif bord_x == 7:
+            the_big_bord_win[2][1] = "T"
+        elif bord_x == 8:
+            the_big_bord_win[2][2] = "T"
+
+def bord_forced_yes_or_no():
+    global bord_forced_O, bord_forced_x,bord_O
+    if x_where_x == 0 and y_where_x == 0:
+        bord_forced_O = "yes"
+        bord_O = 0
+def check_win_O():
+    global bord_forced_O
+    global bord_forced_x
+    if (tic_tac_toe_bord_big[bord_O][0][0] == "x" and tic_tac_toe_bord_big[bord_O][0][1] == "x" and tic_tac_toe_bord_big[bord_O][0][2] == "x") or (
+            tic_tac_toe_bord_big[bord_O][1][0] == "x" and tic_tac_toe_bord_big[bord_O][1][1] == "x" and tic_tac_toe_bord_big[bord_O][1][2] == "x") or (
+            tic_tac_toe_bord_big[bord_O][2][0] == "x" and tic_tac_toe_bord_big[bord_O][2][1] == "x" and tic_tac_toe_bord_big[bord_O][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_O][0][0] == "x" and tic_tac_toe_bord_big[bord_O][1][0] == "x" and tic_tac_toe_bord_big[bord_O][2][0] == "x") or (
+           tic_tac_toe_bord_big[bord_O][0][1] == "x" and tic_tac_toe_bord_big[bord_O][1][1] == "x" and tic_tac_toe_bord_big[bord_O][2][1] == "x") or (
+            tic_tac_toe_bord_big[bord_O][0][2] == "x" and tic_tac_toe_bord_big[bord_O][1][2] == "x" and tic_tac_toe_bord_big[bord_O][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_O][0][0] == "x" and tic_tac_toe_bord_big[bord_O][1][1] == "x" and tic_tac_toe_bord_big[bord_O][2][2] == "x") or (
+            tic_tac_toe_bord_big[bord_O][0][2] == "x" and tic_tac_toe_bord_big[bord_O][1][1] == "x" and tic_tac_toe_bord_big[bord_O][2][0] == "x"):
+        print(f"player 1 win the {bord_O} square")
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_O == 0:
+            the_big_bord_win[0][0] = "x"
+        elif bord_O == 1:
+            the_big_bord_win[0][1] = "x"
+        elif bord_O == 2:
+            the_big_bord_win[0][2] = "x"
+        elif bord_O == 3:
+            the_big_bord_win[1][0] = "x"
+        elif bord_O == 4:
+            the_big_bord_win[1][1] = "x"
+        elif bord_O == 5:
+            the_big_bord_win[1][2] = "x"
+        elif bord_O == 6:
+            the_big_bord_win[2][0] = "x"
+        elif bord_O == 7:
+            the_big_bord_win[2][1] = "x"
+        elif bord_O == 8:
+            the_big_bord_win[2][2] = "x"
+    elif (tic_tac_toe_bord_big[bord_O][0][0] == "O" and tic_tac_toe_bord_big[bord_O][0][1] == "O" and tic_tac_toe_bord_big[bord_O][0][2] == "O") or (
+            tic_tac_toe_bord_big[bord_O][1][0] == "O" and tic_tac_toe_bord_big[bord_O][1][1] == "O" and tic_tac_toe_bord_big[bord_O][1][2] == "O") or (
+            tic_tac_toe_bord_big[bord_O][2][0] == "O" and tic_tac_toe_bord_big[bord_O][2][1] == "O" and tic_tac_toe_bord_big[bord_O][2][2] == "O") or (
+            tic_tac_toe_bord_big[bord_O][0][0] == "O" and tic_tac_toe_bord_big[bord_O][1][0] == "O" and tic_tac_toe_bord_big[bord_O][2][0] == "O") or (
+            tic_tac_toe_bord_big[bord_O][0][1] == "O" and tic_tac_toe_bord_big[bord_O][1][1] == "O" and tic_tac_toe_bord_big[bord_O][2][1] == "O") or (
+            tic_tac_toe_bord_big[bord_O][0][2] == "O" and tic_tac_toe_bord_big[bord_O][1][2] == "O" and tic_tac_toe_bord_big[bord_O][2][2] == "O") or (
+           tic_tac_toe_bord_big[bord_O][0][0] == "O" and tic_tac_toe_bord_big[bord_O][1][1] == "O" and tic_tac_toe_bord_big[bord_O][2][2] == "O") or (
+            tic_tac_toe_bord_big[bord_O][0][2] == "O" and tic_tac_toe_bord_big[bord_O][1][1] == "O" and tic_tac_toe_bord_big[bord_O][2][0] == "O"):
+        print(f"player 2 win the {bord_O} square")
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_x == 0:
+            the_big_bord_win[0][0] = "O"
+        elif bord_O == 1:
+            the_big_bord_win[0][1] = "O"
+        elif bord_O == 2:
+            the_big_bord_win[0][2] = "O"
+        elif bord_O == 3:
+            the_big_bord_win[1][0] = "O"
+        elif bord_O == 4:
+            the_big_bord_win[1][1] = "O"
+        elif bord_O == 5:
+            the_big_bord_win[1][2] = "O"
+        elif bord_O == 6:
+            the_big_bord_win[2][0] = "O"
+        elif bord_O == 7:
+            the_big_bord_win[2][1] = "O"
+        elif bord_O == 8:
+            the_big_bord_win[2][2] = "O"
+
+    elif tic_tac_toe_bord_big[bord_O][0][0] != 0 and tic_tac_toe_bord_big[bord_O][0][1] != 0 and tic_tac_toe_bord_big[bord_O][0][2] != 0 and  tic_tac_toe_bord_big[bord_O][1][0] != 0 and tic_tac_toe_bord_big[bord_O][1][1] != 0 and tic_tac_toe_bord_big[bord_O][1][2] != 0 and tic_tac_toe_bord_big[bord_O][2][0] != 0 and tic_tac_toe_bord_big[bord_O][2][1] != 0 and tic_tac_toe_bord_big[bord_O][2][2] != 0:
+        print("it's full so it's a tie")
+        bord_forced_O = "no"
+        bord_forced_x = "no"
+        if bord_O == 0:
+            the_big_bord_win[0][0] = "T"
+        elif bord_O == 1:
+            the_big_bord_win[0][1] = "T"
+        elif bord_O == 2:
+            the_big_bord_win[0][2] = "T"
+        elif bord_O == 3:
+            the_big_bord_win[1][0] = "T"
+        elif bord_O == 4:
+            the_big_bord_win[1][1] = "T"
+        elif bord_O == 5:
+            the_big_bord_win[1][2] = "T"
+        elif bord_O == 6:
+            the_big_bord_win[2][0] = "T"
+        elif bord_O == 7:
+            the_big_bord_win[2][1] = "T"
+        elif bord_O == 8:
+            the_big_bord_win[2][2] = "T"
 game = "go"
 print_board()
 while game == "go":
     x_go = "yes"
     O_go = "yes"
     while x_go == "yes":
-        bord_x = int(input("player 1 where do you want to go?(board)"))
+        if bord_forced_x == "no":
+            bord_x = int(input("player 1 where do you want to go?(board)"))
         x_where_x = int(input("player 1 where do you want to go?(row)"))
         y_where_x = int(input("player 1 where do you want to go?(column)"))
         if tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] == "x" or tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x]  == "O":
@@ -120,7 +276,8 @@ while game == "go":
             check_win_x()
     while O_go == "yes":
         if game=="go":
-            bord_O = int(input("player 2 where do you want to go?(board)"))
+            if bord_forced_O == "no":
+                bord_O = int(input("player 2 where do you want to go?(board)"))
             x_where_O = int(input("player 2 where do you want to go?(row)"))
             y_where_O = int(input("player 2 where do you want to go?(column)"))
             if tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "x" or tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "O":
@@ -133,6 +290,6 @@ while game == "go":
                 tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] = "O"
                 O_go = "no"
                 print_board()
-                check_win()
+                check_win_O()
 
 
