@@ -165,10 +165,81 @@ def check_win_x():
             the_big_bord_win[2][2] = "T"
 
 def bord_forced_yes_or_no():
-    global bord_forced_O, bord_forced_x,bord_O
+    global bord_forced_O, bord_forced_x,bord_O,bord_x
     if x_where_x == 0 and y_where_x == 0:
         bord_forced_O = "yes"
         bord_O = 0
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 0 and y_where_x == 1:
+        bord_forced_O = "yes"
+        bord_O = 1
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 0 and y_where_x == 2:
+        bord_forced_O = "yes"
+        bord_O = 2
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 1 and y_where_x == 0:
+        bord_forced_O = "yes"
+        bord_O = 3
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 1 and y_where_x == 1:
+        bord_forced_O = "yes"
+        bord_O = 4
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 1 and y_where_x == 2:
+        bord_forced_O = "yes"
+        bord_O = 5
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 2 and y_where_x == 0:
+        bord_forced_O = "yes"
+        bord_O = 6
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 2 and y_where_x == 1:
+        bord_forced_O = "yes"
+        bord_O = 7
+        print(f"player 2 if forced {bord_O}")
+    elif x_where_x == 2 and y_where_x == 2:
+        bord_forced_O = "yes"
+        bord_O = 8
+        print(f"player 2 if forced {bord_O}")
+
+
+    elif x_where_O == 0 and y_where_O == 0:
+        bord_forced_x = "yes"
+        bord_x = 0
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 0 and y_where_O == 1:
+        bord_forced_x = "yes"
+        bord_x = 1
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 0 and y_where_O == 2:
+        bord_forced_x = "yes"
+        bord_x = 2
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 1 and y_where_O == 0:
+        bord_forced_x = "yes"
+        bord_x = 3
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 1 and y_where_O == 1:
+        bord_forced_x = "yes"
+        bord_x = 4
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 1 and y_where_O == 2:
+        bord_forced_x = "yes"
+        bord_x = 5
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 2 and y_where_O == 0:
+        bord_forced_x = "yes"
+        bord_x = 6
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 2 and y_where_O == 1:
+        bord_forced_x = "yes"
+        bord_x = 7
+        print(f"player 1 if forced {bord_x}")
+    elif x_where_O == 2 and y_where_O == 2:
+        bord_forced_x = "yes"
+        bord_x = 8
+        print(f"player 1 if forced {bord_x}")
 def check_win_O():
     global bord_forced_O
     global bord_forced_x
@@ -253,6 +324,33 @@ def check_win_O():
             the_big_bord_win[2][1] = "T"
         elif bord_O == 8:
             the_big_bord_win[2][2] = "T"
+def check_win():
+    global game
+    if (the_big_bord_win[0][0] == "x" and the_big_bord_win[0][1] == "x" and the_big_bord_win[0][2] == "x") or (
+            the_big_bord_win[1][0] == "x" and the_big_bord_win[1][1] == "x" and the_big_bord_win[1][2] == "x") or (
+            the_big_bord_win[2][0] == "x" and the_big_bord_win[2][1] == "x" and the_big_bord_win[2][2] == "x") or (
+            the_big_bord_win[0][0] == "x" and the_big_bord_win[1][0] == "x" and the_big_bord_win[2][0] == "x") or (
+            the_big_bord_win[0][1] == "x" and the_big_bord_win[1][1] == "x" and the_big_bord_win[2][1] == "x") or (
+            the_big_bord_win[0][2] == "x" and the_big_bord_win[1][2] == "x" and the_big_bord_win[2][2] == "x") or (
+            the_big_bord_win[0][0] == "x" and the_big_bord_win[1][1] == "x" and the_big_bord_win[2][2] == "x") or (
+            the_big_bord_win[0][2] == "x" and the_big_bord_win[1][1] == "x" and the_big_bord_win[2][0] == "x"):
+        print("player 1 win")
+        game = "no"
+    elif (the_big_bord_win[0][0] == "O" and the_big_bord_win[0][1] == "O" and the_big_bord_win[0][2] == "O") or (
+            the_big_bord_win[1][0] == "O" and the_big_bord_win[1][1] == "O" and the_big_bord_win[1][2] == "O") or (
+            the_big_bord_win[2][0] == "O" and the_big_bord_win[2][1] == "O" and the_big_bord_win[2][2] == "O") or (
+            the_big_bord_win[0][0] == "O" and the_big_bord_win[1][0] == "O" and the_big_bord_win[2][0] == "O") or (
+            the_big_bord_win[0][1] == "O" and the_big_bord_win[1][1] == "O" and the_big_bord_win[2][1] == "O") or (
+            the_big_bord_win[0][2] == "O" and the_big_bord_win[1][2] == "O" and the_big_bord_win[2][2] == "O") or (
+            the_big_bord_win[0][0] == "O" and the_big_bord_win[1][1] == "O" and the_big_bord_win[2][2] == "O") or (
+            the_big_bord_win[0][2] == "O" and the_big_bord_win[1][1] == "O" and the_big_bord_win[2][0] == "O"):
+        print("player 2 win")
+        game = "no"
+    elif the_big_bord_win[0][0] != 0 and the_big_bord_win[0][1] != 0 and the_big_bord_win[0][2] != 0 and \
+            the_big_bord_win[1][0] != 0 and the_big_bord_win[1][1] != 0 and the_big_bord_win[1][2] != 0 and \
+            the_big_bord_win[2][0] != 0 and the_big_bord_win[2][1] != 0 and the_big_bord_win[2][2] != 0:
+        print("it's full so it's a tie")
+        game = "no"
 game = "go"
 print_board()
 while game == "go":
@@ -272,8 +370,10 @@ while game == "go":
         else:
             tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] = "x"
             x_go = "no"
+            bord_forced_yes_or_no()
             print_board()
             check_win_x()
+            check_win()
     while O_go == "yes":
         if game=="go":
             if bord_forced_O == "no":
@@ -289,7 +389,9 @@ while game == "go":
             else:
                 tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] = "O"
                 O_go = "no"
+                bord_forced_yes_or_no()
                 print_board()
                 check_win_O()
+                check_win()
 
 
