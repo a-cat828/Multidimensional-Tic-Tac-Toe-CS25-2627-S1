@@ -333,7 +333,7 @@ def check_win_O():
         print(f"player 2 win the {bord_O} square")
         bord_forced_O = "no"
         bord_forced_x = "no"
-        if bord_x == 0:
+        if bord_O == 0:
             the_big_bord_win[0][0] = "O"
         elif bord_O == 1:
             the_big_bord_win[0][1] = "O"
@@ -401,6 +401,92 @@ def check_win():
             the_big_bord_win[2][0] != 0 and the_big_bord_win[2][1] != 0 and the_big_bord_win[2][2] != 0:
         print("it's full so it's a tie")
         game = "no"
+def x_thing() :
+    global x_go
+    if bord_x == 0 and (the_big_bord_win[0][0] == "T" or the_big_bord_win[0][0] == "O" or the_big_bord_win[0][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 1 and (the_big_bord_win[0][1] == "T" or the_big_bord_win[0][1] == "O" or the_big_bord_win[0][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 2 and (the_big_bord_win[0][2] == "T" or the_big_bord_win[0][2] == "O" or the_big_bord_win[0][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 3 and (the_big_bord_win[1][0] == "T" or the_big_bord_win[1][0] == "O" or the_big_bord_win[1][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 4 and (the_big_bord_win[1][1] == "T" or the_big_bord_win[1][1] == "O" or the_big_bord_win[1][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 5 and (the_big_bord_win[1][2] == "T" or the_big_bord_win[1][2] == "O" or the_big_bord_win[1][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 6 and (the_big_bord_win[2][0] == "T" or the_big_bord_win[2][0] == "O" or the_big_bord_win[2][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 7 and (the_big_bord_win[2][1] == "T" or the_big_bord_win[2][1] == "O" or the_big_bord_win[2][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_x == 8 and (the_big_bord_win[2][2] == "T" or the_big_bord_win[2][2] == "O" or the_big_bord_win[2][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif x_where_x >= 3 or x_where_x < 0 or y_where_x >= 3 or y_where_x < 0 or bord_x < 0 or bord_x >= 9:
+        print("invalid input")
+        print_board()
+    elif tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] == "x" or tic_tac_toe_bord_big[bord_x][x_where_x][
+        y_where_x] == "O":
+        print("invalid input")
+        print_board()
+    else:
+        tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] = "x"
+        x_go = "no"
+        bord_forced_yes_or_no()
+        print_board()
+        check_win_x()
+        check_win()
+def O_thing() :
+    global O_go
+    if bord_O == 0 and (the_big_bord_win[0][0] == "T" or the_big_bord_win[0][0] == "O" or the_big_bord_win[0][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 1 and (the_big_bord_win[0][1] == "T" or the_big_bord_win[0][1] == "O" or the_big_bord_win[0][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 2 and (the_big_bord_win[0][2] == "T" or the_big_bord_win[0][2] == "O" or the_big_bord_win[0][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 3 and (the_big_bord_win[1][0] == "T" or the_big_bord_win[1][0] == "O" or the_big_bord_win[1][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 4 and (the_big_bord_win[1][1] == "T" or the_big_bord_win[1][1] == "O" or the_big_bord_win[1][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 5 and (the_big_bord_win[1][2] == "T" or the_big_bord_win[1][2] == "O" or the_big_bord_win[1][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 6 and (the_big_bord_win[2][0] == "T" or the_big_bord_win[2][0] == "O" or the_big_bord_win[2][0] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 7 and (the_big_bord_win[2][1] == "T" or the_big_bord_win[2][1] == "O" or the_big_bord_win[2][1] == "x"):
+        print("invalid input")
+        print_board()
+    elif bord_O == 8 and (the_big_bord_win[2][2] == "T" or the_big_bord_win[2][2] == "O" or the_big_bord_win[2][2] == "x"):
+        print("invalid input")
+        print_board()
+    elif x_where_O >= 3 or x_where_O < 0 or y_where_O >= 3 or y_where_O < 0 or bord_O < 0 or bord_O >= 9:
+        print("invalid input")
+        print_board()
+    elif tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "x" or tic_tac_toe_bord_big[bord_O][x_where_O][
+        y_where_O] == "O":
+        print("invalid input")
+        print_board()
+    else:
+        tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] = "O"
+        O_go = "no"
+        bord_forced_yes_or_no()
+        print_board()
+        check_win_O()
+        check_win()
 game = "go"
 x_where_x = "e"
 y_where_x = "e"
@@ -415,109 +501,11 @@ while game == "go":
             bord_x = int(input("player 1 where do you want to go?(board)"))
         x_where_x = int(input("player 1 where do you want to go?(row)"))
         y_where_x = int(input("player 1 where do you want to go?(column)"))
-        if bord_x == 0:
-            if the_big_bord_win[0][0] == "T" or the_big_bord_win[0][0] == "O" or the_big_bord_win[0][0] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 1:
-            if the_big_bord_win[0][1] == "T" or the_big_bord_win[0][1] == "O" or the_big_bord_win[0][1] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 2:
-            if the_big_bord_win[0][2] == "T" or the_big_bord_win[0][2] == "O" or the_big_bord_win[0][2] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 3:
-            if the_big_bord_win[1][0] == "T" or the_big_bord_win[1][0] == "O" or the_big_bord_win[1][0] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 4:
-            if the_big_bord_win[1][1] == "T" or the_big_bord_win[1][1] == "O" or the_big_bord_win[1][1] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 5:
-            if the_big_bord_win[1][2] == "T" or the_big_bord_win[1][2] == "O" or the_big_bord_win[1][2] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 6:
-            if the_big_bord_win[2][0] == "T" or the_big_bord_win[2][0] == "O" or the_big_bord_win[2][0] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 7:
-            if the_big_bord_win[2][1] == "T" or the_big_bord_win[2][1] == "O" or the_big_bord_win[2][1] == "x":
-                print("invalid input")
-                print_board()
-        if bord_x == 8:
-            if the_big_bord_win[2][2] == "T" or the_big_bord_win[2][2] == "O" or the_big_bord_win[2][2] == "x":
-                print("invalid input")
-                print_board()
-        if x_where_x >= 3 or x_where_x < 0 or y_where_x >= 3 or y_where_x < 0 or bord_x < 0 or bord_x > 9:
-            print("invalid input")
-            print_board()
-        if tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] == "x" or tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x]  == "O":
-            print("invalid input")
-            print_board()
-        elif x_where_x > -1 and x_where_x < 3 and y_where_x > -1 and y_where_x < 3 and bord_x > -1 and bord_x < 9:
-            tic_tac_toe_bord_big[bord_x][x_where_x][y_where_x] = "x"
-            x_go = "no"
-            bord_forced_yes_or_no()
-            print_board()
-            check_win_x()
-            check_win()
+        x_thing()
     while O_go == "yes":
         if game=="go":
             if bord_forced_O == "no":
                 bord_O = int(input("player 2 where do you want to go?(board)"))
             x_where_O = int(input("player 2 where do you want to go?(row)"))
             y_where_O = int(input("player 2 where do you want to go?(column)"))
-            if bord_O == 0:
-                if the_big_bord_win[0][0] == "T" or the_big_bord_win[0][0] == "O" or the_big_bord_win[0][0] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 1:
-                if the_big_bord_win[0][1] == "T" or the_big_bord_win[0][1] == "O" or the_big_bord_win[0][1] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 2:
-                if the_big_bord_win[0][2] == "T" or the_big_bord_win[0][2] == "O" or the_big_bord_win[0][2] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 3:
-                if the_big_bord_win[1][0] == "T" or the_big_bord_win[1][0] == "O" or the_big_bord_win[1][0] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 4:
-                if the_big_bord_win[1][1] == "T" or the_big_bord_win[1][1] == "O" or the_big_bord_win[1][1] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 5:
-                if the_big_bord_win[1][2] == "T" or the_big_bord_win[1][2] == "O" or the_big_bord_win[1][2] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 6:
-                if the_big_bord_win[2][0] == "T" or the_big_bord_win[2][0] == "O" or the_big_bord_win[2][0] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 7:
-                if the_big_bord_win[2][1] == "T" or the_big_bord_win[2][1] == "O" or the_big_bord_win[2][1] == "x":
-                    print("invalid input")
-                    print_board()
-            if bord_O == 8:
-                if the_big_bord_win[2][2] == "T" or the_big_bord_win[2][2] == "O" or the_big_bord_win[2][2] == "x":
-                    print("invalid input")
-                    print_board()
-            if x_where_O >= 3 or x_where_O < 0 or y_where_O >= 3 or y_where_O < 0 or bord_O < 0 or bord_O > 9:
-                print("invalid input")
-                print_board()
-            if tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "x" or tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] == "O":
-                print("invalid input")
-                print_board()
-            elif x_where_O > -1 and x_where_O < 3 and y_where_O > -1 and y_where_O < 3 and bord_O > -1 and bord_O < 9:
-                tic_tac_toe_bord_big[bord_O][x_where_O][y_where_O] = "O"
-                O_go = "no"
-                bord_forced_yes_or_no()
-                print_board()
-                check_win_O()
-                check_win()
-
-
+            O_thing()
